@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/header.ejs') %>
+
+  <body>
+    <h1>Progress Tracker</h1>
+
+    <div class="app">
+      <div class="day-container">
+        <!-- prettier-ignore -->
+        <% data.forEach((item, index) => { %>
+          <% if (index === 0) { %>
+            <%- include('../partials/currentDay.ejs', { data: item }); %>
+          <% } else { %>
+            <%- include('../partials/previousDay.ejs', { data: item, index }); %>
+          <% } %>
+        <% }); %>
+      </div>
+
+      <div class="targets-container">
+        <div class="goals">
+          <h3>Goal</h3>
+          <p>30 days</p>
+        </div>
+
+        <div class="streak">
+          <h3>Current Streak</h3>
+          <p><%= streak %> days</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

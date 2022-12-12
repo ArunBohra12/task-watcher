@@ -1,0 +1,56 @@
+<div class="day-details">
+  <p class="date"><b>Today</b></p>
+
+  <div class="tasks">
+    <div class="form-group">
+      <input type="checkbox" id="sql" />
+      <label for="sql"><b>SQL</b></label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="javascript" />
+      <label for="javascript"><b>JavaScript</b></label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="reactjs" />
+      <label for="reactjs"><b>ReactJS</b></label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="dsa" />
+      <label for="dsa"><b>DSA</b></label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="hackerrank" />
+      <label for="hackerrank"><b>HackerRank</b></label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="project" />
+      <label for="project"><b>Project</b></label>
+    </div>
+  </div>
+
+  <button id="update-day">Update Day</button>
+</div>
+
+<script>
+  const progressData = {
+    sql: "<%= data.sql %>",
+    javaScript: "<%= data.javaScript %>",
+    reactJs: "<%= data.reactJs %>",
+    dsa: "<%= data.dsa %>",
+    hackerRank: "<%= data.hackerRank %>",
+    project: "<%= data.project %>",
+  };
+
+  for (item in progressData) {
+    const inputElement = document.getElementById(`${item.toLowerCase()}`);
+
+    if (progressData[item] === "true") {
+      inputElement.checked = true;
+    }
+  }
+</script>
